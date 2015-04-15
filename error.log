@@ -1,2 +1,6 @@
-tar: backup: Cannot stat: No such file or directory
-tar: Error exit delayed from previous errors.
+a backup
+a backup/backup.sh
+a backup/my-backup-20150415-2213.tgz
+a backup/my-backup-20150415-2215.tgz
+a backup/my-backup-20150415-2216.tgz
+a backup/my-backup-20150415-2217.tgz

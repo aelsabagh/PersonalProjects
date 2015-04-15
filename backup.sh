@@ -34,9 +34,9 @@ case $choice in
     echo "--The selected backup type is Full backup"
     echo "--Backing up $filetype files.."
     sleep 1
-    cp *.$filetype $destination
+    cp $filetype $destination
     tar -zcvf $OF $destination   2>$EF
-    mv $OF $destination; cd $destination; rm $filetype; cd ..;
+    rm $destination$filetype; mv $OF $destination;
     sleep 1
     echo "--Contents of $EF File:"; tail $EF
     break
@@ -48,7 +48,8 @@ case $choice in
     find $filetype -newer timestamp.file -exec cp {} $destination \;
     echo "about to create tar"
     tar -zcvf $OF $destination   2>$EF
-    mv $OF $destination; cd $destination; rm $filetype; cd ..;
+    rm $destination$filetype; mv $OF $destination;
+    touch timestamp.file
     sleep 1
     echo "--Contents of $EF File:"; tail $EF
     break
